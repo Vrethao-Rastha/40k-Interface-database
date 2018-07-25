@@ -2,6 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('vox_dispatch', function(table){
     table.increments();
+    table.string('avatar')
       table.string('name')
       table.string('date')
       table.string('content')

@@ -6,9 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('vox_dispatch').insert([
         {name: 'test', date:'test', content:'test'},
-        {name: 'test', date:'test', content:'test'},
-        {name: 'test', date:'test', content:'test'},
-        {name: 'test', date:'test', content:'test'},
+
 
       ]);
     });
