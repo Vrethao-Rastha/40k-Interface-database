@@ -1,9 +1,10 @@
 //Update the name of the controller below and rename the file.
 const jwt = require('jsonwebtoken')
 const template = require("../controllers/template.js")
+const cors = require('cors')
 module.exports = function(app){
 
-  // app.options('*', cors())
+  app.use(cors())
 
   app.get('/field_reports', template.field_reports);
 

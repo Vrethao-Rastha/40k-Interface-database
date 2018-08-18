@@ -37,7 +37,7 @@ module.exports = {
 
   file_search: function(req, res) {
     knex('case_files')
-    .where('file_id', req.body.case_number)
+    .where('File_Number', req.body.case_number)
     .then(data =>
     res.json(data))
   },
@@ -45,14 +45,14 @@ module.exports = {
 
   name_search: function(req, res) {
     knex('case_files')
-    .where('content', req.body.name)
+    .where('First_Name', req.body.name)
     .then(name =>
       res.json(name))
   },
 
   location_search: function(req, res) {
     knex('case_files')
-    .where('content', req.body.location)
+    .where('City', req.body.location)
     .then(location =>
       res.json(location))
   },
