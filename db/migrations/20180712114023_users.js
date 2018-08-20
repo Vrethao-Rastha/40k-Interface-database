@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
       table.string('user_name')
       table.string('password')
       table.string('rank')
+      table.boolean('isAdmin').defaultTo(false)
       table.timestamp('updated_at').defaultTo(knex.fn.now());
       table.timestamp('ucreated_at').defaultTo(knex.fn.now());
     })

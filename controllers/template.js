@@ -23,6 +23,26 @@ module.exports = {
    })
 },
 
+register: function(req, res) {
+  knex('users')
+    .where('user_name', req.body.user_name)
+    .then(user => {
+      if(user.length > 0) {
+        res.sendStatus(403)
+      } else {
+        let hash = bcrypt.hashSync(req.body.password)
+        knex('users')
+          .insert({
+            user_name: req.body.user_name,
+            password: hash
+          }, '*')
+          .then(newUser => res.send('successful'))
+
+      }
+    })
+    .catch(err => res.sendStatus(500))
+},
+
   field_reports: function(req, res) {
     knex('field_reports')
     .then(data =>

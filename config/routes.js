@@ -16,4 +16,8 @@ module.exports = function(app){
 
   app.post('/location_search', template.location_search)
 
+  app.post('/login', template.login)
+
+  app.post('/register', template.register)
+
 }
