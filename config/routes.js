@@ -10,6 +10,8 @@ module.exports = function(app){
 
   app.get('/vox_dispatch', template.vox_dispatch);
 
+  app.put('/vox_dispatch', template.update_vox_dispatch);
+
   app.post('/file_search', template.file_search)
 
   app.post('/name_search', template.name_search)

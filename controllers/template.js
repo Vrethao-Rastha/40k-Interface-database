@@ -55,6 +55,16 @@ register: function(req, res) {
     res.json(data))
   },
 
+  update_vox_dispatch: function(req, res) {
+    knex('vox_dispatch').where('id', req.body.id)
+    .update({
+      content: req.body.content,
+      name: req.body.name
+    })
+    .then(data =>
+    res.json(data))
+  },
+
   file_search: function(req, res) {
     knex('case_files')
     .where('File_Number', req.body.case_number)
