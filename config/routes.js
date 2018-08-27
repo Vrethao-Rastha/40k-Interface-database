@@ -12,6 +12,10 @@ module.exports = function(app){
 
   app.put('/vox_dispatch', template.update_vox_dispatch);
 
+  app.delete('/vox_dispatch/:id', template.delete_vox_dispatch)
+
+  app.post('/vox_dispatch', template.add_vox_dispatch);
+
   app.post('/file_search', template.file_search)
 
   app.post('/name_search', template.name_search)
@@ -21,5 +25,7 @@ module.exports = function(app){
   app.post('/login', template.login)
 
   app.post('/register', template.register)
+
+  app.post('/add_case_file', template.case_file)
 
 }

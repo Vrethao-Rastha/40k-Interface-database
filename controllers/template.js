@@ -65,6 +65,24 @@ register: function(req, res) {
     res.json(data))
   },
 
+  add_vox_dispatch: function(req, res) {
+    knex('vox_dispatch')
+    .insert({
+      content: req.body.content,
+      name: req.body.name,
+      avatar: req.body.avatar
+    }, '*')
+    .then(data =>
+    res.json(data))
+  },
+
+  delete_vox_dispatch: function(req, res) {
+    knex('vox_dispatch').where('id', req.params.id)
+    .del()
+    .then(data =>
+    res.json(data))
+  },
+
   file_search: function(req, res) {
     knex('case_files')
     .where('File_Number', req.body.case_number)
@@ -85,6 +103,20 @@ register: function(req, res) {
     .where('City', req.body.location)
     .then(location =>
       res.json(location))
+  },
+
+  case_file: function(req, res){
+    knex('case_files')
+    .insert({
+      First_Name: req.body.First_Name,
+      Last_Name: req.body.Last_Name,
+      Address: req.body.Address,
+      City: req.body.City,
+      Bio: req.body.Bio,
+      File_Number: req.body.File_Number
+    })
+    .then(data =>
+    res.json(data))
   },
 
 }
