@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('avatar')
       table.string('name')
       table.string('date')
-      table.string('content')
+      table.text('content')
       table.timestamp('updated_at').defaultTo(knex.fn.now());
       table.timestamp('ucreated_at').defaultTo(knex.fn.now());
     })

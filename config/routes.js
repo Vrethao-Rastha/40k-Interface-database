@@ -6,6 +6,8 @@ module.exports = function(app){
 
   app.use(cors())
 
+  app.get('/users', template.users);
+
   app.get('/field_reports', template.field_reports);
 
   app.get('/vox_dispatch', template.vox_dispatch);

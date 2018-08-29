@@ -43,6 +43,12 @@ register: function(req, res) {
     .catch(err => res.sendStatus(500))
 },
 
+  users: function(req, res){
+    knex('users')
+    .then(data =>
+    res.json(data))
+  },
+
   field_reports: function(req, res) {
     knex('field_reports')
     .then(data =>
@@ -73,14 +79,14 @@ register: function(req, res) {
       avatar: req.body.avatar
     }, '*')
     .then(data =>
-    res.json(data))
+    res.json(data[0]))
   },
 
   delete_vox_dispatch: function(req, res) {
     knex('vox_dispatch').where('id', req.params.id)
     .del()
     .then(data =>
-    res.json(data))
+    res.json(req.params.id))
   },
 
   file_search: function(req, res) {
