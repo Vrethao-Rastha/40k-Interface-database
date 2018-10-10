@@ -7,6 +7,10 @@ const port = process.env.PORT || 8000;
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors())
+
+require('./config/session.js')(app);
+
 app.use(express.static(path.join(__dirname, "public")));
 
 
