@@ -95,6 +95,13 @@ register: function(req, res) {
     res.json(req.params.id))
   },
 
+  delete_file: function(req, res) {
+    knex('case_files').where('id', req.params.id)
+    .del()
+    .then(data =>
+    res.json(req.params.id))
+  },
+
   file_search: function(req, res) {
     knex('case_files')
     .where('File_Number', req.body.case_number)

@@ -30,4 +30,6 @@ module.exports = function(app){
 
   app.post('/add_case_file', template.case_file)
 
+  app.delete('/delete_case_file', template.delete_file)
+
 }
