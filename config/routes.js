@@ -12,7 +12,7 @@ module.exports = function(app){
 
   app.get('/vox_dispatch', template.vox_dispatch);
 
-  app.put('/vox_dispatch', template.update_vox_dispatch);
+  app.put('/vox_dispatch/:id', template.update_vox_dispatch);
 
   app.delete('/vox_dispatch/:id', template.delete_vox_dispatch)
 
