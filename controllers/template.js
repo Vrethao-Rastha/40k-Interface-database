@@ -73,7 +73,7 @@ register: function(req, res) {
       content: req.body.content,
     })
     .then(data =>
-    res.json(data))
+    res.json(data[0]))
   },
 
   add_vox_dispatch: function(req, res) {
@@ -96,10 +96,10 @@ register: function(req, res) {
   },
 
   delete_file: function(req, res) {
-    knex('case_files').where('id', req.params.id)
+    knex('case_files').where('File_Number', req.body.file_number)
     .del()
     .then(data =>
-    res.json(req.params.id))
+    res.json(req.body.id))
   },
 
   file_search: function(req, res) {
