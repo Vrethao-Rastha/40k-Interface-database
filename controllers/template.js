@@ -55,6 +55,13 @@ register: function(req, res) {
     res.json(data))
   },
 
+  delete_users: function(req, res) {
+    knex('users').where('id', req.body.id)
+    .del()
+    .then(data =>
+    res.json(req.body.id))
+  },
+
   field_reports: function(req, res) {
     knex('field_reports')
     .then(data =>
