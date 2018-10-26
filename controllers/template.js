@@ -40,7 +40,9 @@ register: function(req, res) {
         knex('users')
           .insert({
             user_name: req.body.user_name,
-            password: hash
+            password: hash,
+            rank: req.body.rank,
+            isAdmin: req.body.isAdmin
           }, '*')
           .then(newUser => res.send('successful'))
 
