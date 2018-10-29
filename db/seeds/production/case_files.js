@@ -3205,6 +3205,32 @@ exports.seed = function(knex, Promise) {
 		City: "Vieux-Genappe",
 		Bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut",
 		File_Number: "IKK55GPA4QU"
+	},
+	{
+		First_Name: "Red",
+		Last_Name: "Unknown",
+		Address: "Unknown",
+		City: "Hive Primaris",
+		Bio: "Member of the offworld Inquisition party, seen with Interrogator Earlven on numerous occasions.\n\
+		Intel also has records of meetings with several mid-level Consortium members.\n\
+		Do not attempt to engage or follow, she is believed responsible for the disappearance of several Inquisition operatives. Only Interrogator Elsarryna has been able to surveil unnoticed.",
+		File_Number: "AD456UO98X"
+	},
+	{
+		First_Name: "Earlven",
+		Last_Name: "Unknown",
+		Address: "Rogue Trader's Ship",
+		City: "N/A",
+		Bio: "He's a dick.",
+		File_Number: "HG68FDS321"
+	},
+	{
+		First_Name: "Elsarryna",
+		Last_Name: "REDACTED",
+		Address: "REDACTED",
+		City: "REDACTED",
+		Bio: "REDACTED",
+		File_Number: "JSHV747CVS"
 	}
 
       ]);
