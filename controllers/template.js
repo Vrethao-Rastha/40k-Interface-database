@@ -111,6 +111,19 @@ register: function(req, res) {
     res.json(req.body.id))
   },
 
+  update_case_file: function(req, res) {
+    knex('case_files').where('File_Number', req.body.file_number)
+    .update({
+      First_Name: req.body.First_Name,
+      Last_Name: req.body.Last_Name,
+      Address: req.body.Address,
+      City: req.body.City,
+      Bio: req.body.Bio
+    })
+    .then(data =>
+    res.json(req.body.id))
+  },
+
   file_search: function(req, res) {
     knex('case_files')
     .where('File_Number', req.body.case_number)
