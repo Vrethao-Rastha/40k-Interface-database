@@ -13,7 +13,6 @@ require('./config/session.js')(app);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-
 var routes_setter = require('./config/routes.js');
 routes_setter(app);
 
