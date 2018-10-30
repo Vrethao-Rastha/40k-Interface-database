@@ -123,7 +123,7 @@ register: function(req, res) {
     knex('case_files')
     .where('First_Name', req.body.first_name).orWhere('Last_Name', req.body.last_name).orWhere('First_Name', req.body.last_name).orWhere('Last_Name', req.body.first_name)
     .then(data =>
-      res.json(data[0]))
+      res.json(data))
   },
 
   location_search: function(req, res) {
