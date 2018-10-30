@@ -120,9 +120,8 @@ register: function(req, res) {
 
 
   name_search: function(req, res) {
-    console.log(req.body.name)
     knex('case_files')
-    .where('First_Name', req.body.name).orWhere('Last_Name', req.body.name)
+    .where('First_Name', req.body.first_name).orWhere('Last_Name', req.body.last_name).orWhere('First_Name', req.body.last_name).orWhere('Last_Name', req.body.first_name)
     .then(data =>
       res.json(data))
   },
