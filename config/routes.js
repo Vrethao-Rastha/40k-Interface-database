@@ -34,6 +34,6 @@ module.exports = function(app){
 
   app.put('/update_case_file', template.update_case_file)
 
-  app.delete('/delete_case_file', template.delete_file)
+  app.delete('/delete_case_file/:file_number', template.delete_file)
 
 }

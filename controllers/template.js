@@ -105,10 +105,11 @@ register: function(req, res) {
   },
 
   delete_file: function(req, res) {
-    knex('case_files').where('file_number', req.body.file_number)
+    console.log(req.body.id)
+    knex('case_files').where('file_number', req.params.file_number)
     .del()
     .then(data =>
-    res.json(req.body.id))
+    res.json(req.params.file_numbe))
   },
 
   update_case_file: function(req, res) {
