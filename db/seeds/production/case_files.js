@@ -3229,8 +3229,16 @@ exports.seed = function(knex, Promise) {
 		Last_Name: "REDACTED",
 		Address: "REDACTED",
 		City: "REDACTED",
-		Bio: "REDACTED",
+		Bio: "UNAUTHORIZED. Magenta level Inquisitorial clearance required to access this file.",
 		File_Number: "JSHV747CVS"
+	},
+	{
+		First_Name: "Ionael",
+		Last_Name: "Henisma",
+		Address: "REDACTED",
+		City: "REDACTED",
+		Bio: "UNAUTHORIZED. Crimson level Inquisitorial clearance required to access this file.",
+		File_Number: "HB76KN645"
 	}
 
       ]);

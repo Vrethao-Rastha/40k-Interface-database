@@ -105,14 +105,14 @@ register: function(req, res) {
   },
 
   delete_file: function(req, res) {
-    knex('case_files').where('File_Number', req.body.file_number)
+    knex('case_files').where('file_number', req.body.file_number)
     .del()
     .then(data =>
     res.json(req.body.id))
   },
 
   update_case_file: function(req, res) {
-    knex('case_files').where('File_Number', req.body.file_number)
+    knex('case_files').where('file_number', req.body.file_number)
     .update({
       First_Name: req.body.First_Name,
       Last_Name: req.body.Last_Name,
@@ -126,7 +126,7 @@ register: function(req, res) {
 
   file_search: function(req, res) {
     knex('case_files')
-    .where('File_Number', req.body.case_number)
+    .where('file_number', req.body.case_number)
     .then(data =>
     res.json(data))
   },
@@ -154,7 +154,7 @@ register: function(req, res) {
       Address: req.body.Address,
       City: req.body.City,
       Bio: req.body.Bio,
-      File_Number: req.body.File_Number
+      file_number: req.body.file_number
     })
     .then(data =>
     res.json(data))

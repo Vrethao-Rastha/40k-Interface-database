@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
       table.string('Address')
       table.string('City')
       table.text('Bio')
-      table.string('File_Number')
+      table.string('file_number')
       table.timestamp('updated_at').defaultTo(knex.fn.now());
       table.timestamp('ucreated_at').defaultTo(knex.fn.now());
     })
