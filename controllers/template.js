@@ -109,7 +109,7 @@ register: function(req, res) {
     knex('case_files').where('file_number', req.params.file_number)
     .del()
     .then(data =>
-    res.json(req.params.file_numbe))
+    res.json(req.params.file_number))
   },
 
   update_case_file: function(req, res) {
