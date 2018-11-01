@@ -118,7 +118,8 @@ register: function(req, res) {
       Last_Name: req.body.Last_Name,
       Address: req.body.Address,
       City: req.body.City,
-      Bio: req.body.Bio
+      Bio: req.body.Bio,
+      file_number: req.body.file_number
     })
     .then(data =>
     res.json(req.body.id))
