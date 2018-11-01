@@ -112,7 +112,7 @@ register: function(req, res) {
   },
 
   update_case_file: function(req, res) {
-    knex('case_files').where('file_number', req.body.file_number)
+    knex('case_files').where('id', req.params.id)
     .update({
       First_Name: req.body.First_Name,
       Last_Name: req.body.Last_Name,

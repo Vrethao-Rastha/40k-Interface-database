@@ -32,7 +32,7 @@ module.exports = function(app){
 
   app.post('/add_case_file', template.case_file)
 
-  app.put('/update_case_file', template.update_case_file)
+  app.put('/update_case_file/:id', template.update_case_file)
 
   app.delete('/delete_case_file/:id', template.delete_file)
 
