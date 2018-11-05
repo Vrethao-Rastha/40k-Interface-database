@@ -122,7 +122,7 @@ register: function(req, res) {
       file_number: req.body.file_number
     })
     .then(data =>
-    res.json(req.body.id))
+    res.json('successful'))
   },
 
   file_search: function(req, res) {
