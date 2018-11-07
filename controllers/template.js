@@ -161,4 +161,40 @@ register: function(req, res) {
     res.json(data))
   },
 
+  add_info: function(req, res){
+    knex('glossary')
+    .insert({
+      Title: req.body.Title,
+      Content: req.body.Content,
+      file_number: req.body.file_number
+    })
+    .then(data =>
+    res.json(data))
+  },
+
+  information_search: function(req, res) {
+    knex('glossary')
+    .where('Title', req.body.Title)
+    .then(data =>
+    res.json(data))
+  },
+
+  delete_information: function(req, res) {
+    knex('glossary').where('id', req.params.id)
+    .del()
+    .then(data =>
+    res.json(req.params.id))
+  },
+
+  update_info_file: function(req, res) {
+    knex('glossary').where('id', req.params.id)
+    .update({
+      Title: req.body.Title,
+      Content: req.body.Content,
+      file_number: req.body.file_number
+    })
+    .then(data =>
+    res.json('successful'))
+  },
+
 }

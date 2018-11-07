@@ -36,4 +36,12 @@ module.exports = function(app){
 
   app.delete('/delete_case_file/:id', template.delete_file)
 
+  app.post('/add_info_file', template.add_info)
+
+  app.post('/information_search/', template.information_search)
+
+  app.put('/update_info_file/:id', template.update_info_file)
+
+  app.delete('/information_search/:id', template.delete_information)
+
 }
