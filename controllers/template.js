@@ -197,4 +197,9 @@ register: function(req, res) {
     res.json('successful'))
   },
 
+  all_information_search: function(req, res) {
+    knex('glossary')
+    .then(data => 
+      res.json(data))
+  }
 }

@@ -38,6 +38,8 @@ module.exports = function(app){
 
   app.post('/add_info_file', template.add_info)
 
+  app.get('/information_search/', template.all_information_search)
+
   app.post('/information_search/', template.information_search)
 
   app.put('/update_info_file/:id', template.update_info_file)

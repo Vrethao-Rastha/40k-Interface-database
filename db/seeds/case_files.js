@@ -3239,6 +3239,14 @@ exports.seed = function(knex, Promise) {
 		City: "REDACTED",
 		Bio: "UNAUTHORIZED. Crimson level Inquisitorial clearance required to access this file.",
 		file_number: "HB76KN645"
+	},
+	{
+		First_Name: "Israfel",
+		Last_Name: "Polouro",
+		Address: "382847-4733k Ave 65839",
+		City: "Hive Primaris, Stack J",
+		Bio: "Numerous citations for excessive force and insubordination, not expected to rise beyond the rank of acolyte.",
+		file_number: "SDF49DJ782"
 	}
 
       ]);
