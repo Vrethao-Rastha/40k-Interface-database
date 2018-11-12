@@ -173,10 +173,11 @@ register: function(req, res) {
   },
 
   information_search: function(req, res) {
-    knex('glossary')
-    .where('Title', req.body.Title)
-    .then(data =>
-    res.json(data))
+    var searchText = req.body.Title.toLowerCase()
+    var queryBuilder = knex.select('*').from('glossary') 
+    queryBuilder.where('Title', 'like', `%${searchText}%`)
+      .then( query => 
+        res.json(query))  
   },
 
   delete_information: function(req, res) {
@@ -201,5 +202,5 @@ register: function(req, res) {
     knex('glossary')
     .then(data => 
       res.json(data))
-  }
+  },
 }
