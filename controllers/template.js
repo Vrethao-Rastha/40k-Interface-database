@@ -173,7 +173,7 @@ register: function(req, res) {
   },
 
   information_search: function(req, res) {
-    var searchText = req.body.Title.toLowerCase()
+    var searchText = req.body.Title.replace(/\b[a-z]/g,function(f){return f.toUpperCase()})
     var queryBuilder = knex.select('*').from('glossary') 
     queryBuilder.where('Title', 'like', `%${searchText}%`)
       .then( query => 
