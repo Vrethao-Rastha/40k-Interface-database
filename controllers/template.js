@@ -174,8 +174,10 @@ register: function(req, res) {
 
   information_search: function(req, res) {
     var searchText = req.body.Title.replace(/\b[a-z]/g,function(f){return f.toUpperCase()})
-    var queryBuilder = knex.select('*').from('glossary') 
-    queryBuilder.where('Title', 'like', `%${searchText}%`)
+    var queryBuilder = knex.select('*').from('glossary').rightJoin('case_files', 'glossary.id', 'case_files.id')
+    queryBuilder.where('Title', 'like', `%${searchText}%`).orWhere('First_Name', 'like', `%${searchText}%`).orWhere('Last_Name', 'like', `%${searchText}%`)
+    // .then(
+    // knex.select('*').from('case_files').where('First_Name', 'like', `%${searchText}%`).orWhere('Last_Name', 'like', `%${searchText}%`)
       .then( query => 
         res.json(query))  
   },
