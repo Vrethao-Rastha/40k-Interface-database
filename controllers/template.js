@@ -117,7 +117,8 @@ register: function(req, res) {
       First_Name: req.body.First_Name,
       Last_Name: req.body.Last_Name,
       Address: req.body.Address,
-      City: req.body.City,
+      Hive: req.body.Hive,
+      Hive_Stack: req.body.Hive_stack,
       Bio: req.body.Bio,
       file_number: req.body.file_number
     })
@@ -153,7 +154,7 @@ register: function(req, res) {
       First_Name: req.body.First_Name,
       Last_Name: req.body.Last_Name,
       Address: req.body.Address,
-      City: req.body.City,
+      Hive: req.body.Hive,
       Bio: req.body.Bio,
       file_number: req.body.file_number
     })
@@ -181,7 +182,8 @@ register: function(req, res) {
     .orWhere('Last_Name', 'like', `%${searchText}%`)
     .orWhere('Address', 'like', `%${searchText}%`)
     .orWhere('Bio', 'like', `%${searchText}%`)
-    .orWhere('City', 'like', `%${searchText}%`)
+    .orWhere('Hive', 'like', `%${searchText}%`)
+    .orWhere('Hive_Stack', 'like', `%${searchText}%`)
       .then( query => 
         res.json(query))  
   },
