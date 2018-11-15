@@ -176,6 +176,7 @@ register: function(req, res) {
   information_search: function(req, res) {
     var searchText = req.body.Title.replace(/\b[a-z]/g,function(f){return f.toUpperCase()})
     var queryBuilder = knex.select('*').from('glossary').rightJoin('case_files', 'glossary.id', 'case_files.id')
+  
     queryBuilder.where('Title', 'like', `%${searchText}%`)
     .orWhere('Content', 'like', `%${searchText}%`)
     .orWhere('First_Name', 'like', `%${searchText}%`)
@@ -186,6 +187,7 @@ register: function(req, res) {
     .orWhere('Hive_Stack', 'like', `%${searchText}%`)
       .then( query => 
         res.json(query))  
+    
   },
 
   delete_information: function(req, res) {
