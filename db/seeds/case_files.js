@@ -3621,7 +3621,7 @@ exports.seed = function(knex, Promise) {
 		file_number: "AD456UO98X"
 	},
 	{
-		First_Name: "Irlven",
+		First_Name: "Earlven",
 		Last_Name: "Unknown",
 		Address: "Rogue Trader's Ship",
 		Hive: 'N/A',
