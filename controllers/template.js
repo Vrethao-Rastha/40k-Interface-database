@@ -173,6 +173,12 @@ register: function(req, res) {
     res.json(data))
   },
 
+  all_info: function(req, res){
+    knex('glossary')
+    .then(data =>
+      res.json(data))
+  },
+
   information_search: function(req, res) {
     var searchText = req.body.Title.replace(/\b[a-z]/g,function(f){return f.toUpperCase()})
     var queryBuilder = knex.select('*').from('glossary').rightJoin('case_files', 'glossary.id', 'case_files.id')
@@ -186,8 +192,14 @@ register: function(req, res) {
     .orWhere('Hive', 'like', `%${searchText}%`)
     .orWhere('Hive_Stack', 'like', `%${searchText}%`)
       .then( query => 
-        res.json(query))  
-    
+      res.json(query))  
+  },
+
+  glossary_search: function(req, res){
+    var searchText = req.body.Title.replace(/\b[a-z]/g,function(f){return f.toUpperCase()})
+    knex('glossary').where('Title', 'like', `%${searchText}%`)
+    .then(data =>
+      res.json(data))
   },
 
   delete_information: function(req, res) {
@@ -208,9 +220,4 @@ register: function(req, res) {
     res.json('successful'))
   },
 
-  all_information_search: function(req, res) {
-    knex('glossary')
-    .then(data => 
-      res.json(data))
-  },
 }

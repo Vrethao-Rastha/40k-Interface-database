@@ -38,12 +38,14 @@ module.exports = function(app){
 
   app.post('/add_info_file', template.add_info)
 
-  app.get('/information_search/', template.all_information_search)
+  app.get('/information_search/', template.all_info)
 
   app.post('/information_search/', template.information_search)
 
   app.put('/update_info_file/:id', template.update_info_file)
 
   app.delete('/information_search/:id', template.delete_information)
+
+  app.post('/glossary_search', template.glossary_search)
 
 }
